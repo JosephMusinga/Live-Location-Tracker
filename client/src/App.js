@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import CreateUser from './admin/CreateUser';
+import Home from './user/Home';
+import AdminPanel from './admin/AdminPanel';
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
             <Route exact path='/' element={<Login />} />
             <Route exact path='/createUser' element={<CreateUser />} />
             <Route exact path='/login' element={<Login />} />
+            <Route exact path='/home' element={<Home />} />
+            <Route exact path='/adminPanel' element={<AdminPanel />} />
+
+
 
             {/* <Route exact path='/deviceList' element={<DeviceList />} />
             <Route exact path='/addDeviceForm' element={<AddDeviceForm />} />

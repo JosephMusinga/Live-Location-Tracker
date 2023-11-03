@@ -8,6 +8,8 @@ const Signup = () => {
  
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
+    // const [role, setRole] = useState('');
+
  
     const onSubmit = async (e) => {
       e.preventDefault()
@@ -63,7 +65,22 @@ const Signup = () => {
                                 required                                 
                                 placeholder="Password"              
                             />
-                        </div>                                             
+                        </div>   
+
+                        
+                        {/* <div>
+                            <label htmlFor="role">
+                                Role
+                            </label>
+                            <input
+                                type="role"
+                                label="Create role"
+                                value={role}
+                                onChange={(e) => setRole(e.target.value)} 
+                                required                                 
+                                placeholder="role"              
+                            />
+                        </div>                                              */}
                         
                         <button
                             type="submit" 
