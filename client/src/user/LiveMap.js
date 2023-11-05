@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Polyline, BounceMarker } from 'react-leaflet';
 import { getCoordinatesFromDatabase } from '../Firebase';
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 
 function LiveMap() {
   const [coordinates, setCoordinates] = useState([-17.84, 31.04]);
+  const [currentPosition, setCurrentPosition] = useState([-17.81, 31.04]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -14,12 +15,28 @@ function LiveMap() {
     getCoordinatesFromDatabase(databaseRef)
       .then((coordinatesArray) => {
         setCoordinates(coordinatesArray);
-        console.log(coordinatesArray);
       })
       .catch((error) => {
         console.error('Error retrieving coordinates:', error);
       });
   }, []);
+
+  function getPosition(callback) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      const currentPosition = [latitude, longitude];
+      callback(currentPosition);
+    });
+  }
+
+  useEffect(() => {
+    getPosition((currentPosition) => {
+      setCurrentPosition(currentPosition);
+      console.log(currentPosition)
+    });
+  }, []);
+
+   
 
   return (
     <div>
@@ -34,7 +51,7 @@ function LiveMap() {
         <MapContainer
           center={coordinates}
           zoom={11}
-          style={{ height: '100%', width: '100%', position: 'relative' }}
+          style={{ height: '100%', width: '100%' }}
         >
           <TileLayer
             attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
@@ -42,7 +59,11 @@ function LiveMap() {
           />
 
           <Marker position={coordinates} />
+          <Marker position={currentPosition} />
+
+          <Polyline positions={[coordinates, currentPosition]} /> 
         </MapContainer>
+
       </div>
     </div>
   );
