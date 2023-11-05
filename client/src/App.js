@@ -1,18 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import CreateUser from './admin/CreateUser';
 import Home from './user/Home';
 import AdminPanel from './admin/AdminPanel';
+import LiveMap from './user/LiveMap';
 
 function App() {
   return (
-    <div className="app">
-      <div className='header'>
-        <h1>Live Location Tracker</h1>
+    <div className="flex flex-col items-center" >
+      <div>
+        <h1 className='text-blue-500 text-5xl'>Live Location Tracker</h1>
       </div>
-      <div className='app__body'>
+      <div>
         <BrowserRouter>
           <Routes>
             <Route exact path='/' element={<Login />} />
@@ -20,6 +19,7 @@ function App() {
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/home' element={<Home />} />
             <Route exact path='/adminPanel' element={<AdminPanel />} />
+            <Route exact path='/liveMap' element={<LiveMap />} />
 
 
 

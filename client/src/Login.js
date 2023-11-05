@@ -35,9 +35,9 @@ const Login = () => {
             <main>
                 <section>
                     <div>
-                        <form>
-                            <div>
-                                <label htmlFor="email-address">
+                        <form >
+                            <div className='flex flex-col m-10'>
+                                <label className='text-green-700 text-2xl' htmlFor="email-address">
                                     Email address
                                 </label>
                                 <input
@@ -50,8 +50,8 @@ const Login = () => {
                                 />
                             </div>
 
-                            <div>
-                                <label htmlFor="password">
+                            <div className='flex flex-col m-10'>
+                                <label className='text-green-700 text-2xl' htmlFor="password">
                                     Password
                                 </label>
                                 <input
@@ -64,8 +64,8 @@ const Login = () => {
                                 />
                             </div>
 
-                            <div>
-                                <button
+                            <div className='text-red-700'>
+                                <button className='flex flex-col m-10  border-black'
                                     onClick={onLogin}
                                 >
                                     Login
