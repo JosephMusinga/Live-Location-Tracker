@@ -1,0 +1,15 @@
+.home__main{
+    border-style:dotted ;
+}
+
+.input__field{
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+}
+
+.track__button{
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+}

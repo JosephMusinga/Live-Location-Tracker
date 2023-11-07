@@ -4,13 +4,17 @@ import CreateUser from './admin/CreateUser';
 import Home from './user/Home';
 import AdminPanel from './admin/AdminPanel';
 import LiveMap from './user/LiveMap';
+import UserList from './admin/UsersList';
+import './App.css'
 
 function App() {
   return (
-    <div className="flex flex-col items-center" >
+    <div className="main" >
       <div>
-        <h1 className='text-blue-500 text-5xl'>Live Location Tracker</h1>
+        <h1 className='app__header'>Live Location Tracker</h1>
       </div>
+
+      
       <div>
         <BrowserRouter>
           <Routes>
@@ -20,12 +24,8 @@ function App() {
             <Route exact path='/home' element={<Home />} />
             <Route exact path='/adminPanel' element={<AdminPanel />} />
             <Route exact path='/liveMap' element={<LiveMap />} />
+            <Route exact path='/userList' element={<UserList />} />
 
-
-
-            {/* <Route exact path='/deviceList' element={<DeviceList />} />
-            <Route exact path='/addDeviceForm' element={<AddDeviceForm />} />
-            <Route exact path='/liveMap' element={<LiveMap />} /> */}
           </Routes>
         </BrowserRouter>
       </div>
