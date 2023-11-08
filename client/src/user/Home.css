@@ -1,29 +1,91 @@
+.home__main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    font-size: 21px;
+}
+
 .home__header{
     display: flex;
+    align-items: center;
     justify-content: center;
+    margin-top: none;
+}
+
+.home__header > h1{
+   
+    margin-bottom: 25px;
+    width: 111px;
+    font-size: 35px;
+    font-style: italic;
+
+}
+
+.home__body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .text{
-    display: flex;
-    justify-content: center;
+    font-size: 25px;
+    color:  rgb(146, 93, 53);
 }
 
 .input__field{
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
+    margin-top: 35px;
+
+}
+
+.input__field  > input{
+    border: none;
+    border-bottom: 2px solid red;
+    padding: 15px;
+    font-size: 22px;
+    font-family:   'serif';
+    
+
 }
 
 .track__button{
-    margin-top: 55px;
     display: flex;
     justify-content: center;
+    margin: 21px;
+
 }
 
-.track__buttonel{
-    color: red;
+.track__button > button{
+    margin-top: 15px;
+    width: 155px;
+    height: 35px;
+    font-size: 21px;
+    background-color: rgb(220, 145, 87);
+    color:white;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
 }
 
-.user__section{
+.track__button > button:hover {
+    background-color: white;
+    border: solid;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.user__info{
+    display: flex;
+    justify-content: center;
     margin-top:90px;
+}
+
+.user__icon{
+    margin: 5px;
+    border-style: dotted;
+    width: 55px;
+    height: 55px;
+
 }

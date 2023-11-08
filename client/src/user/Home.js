@@ -41,7 +41,7 @@ const Home = () => {
         updateUser(null);
       }
     });
-  }, []);
+  });
 
   const handleButtonClick = () => {
     let value = ref;
@@ -50,10 +50,12 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1 className='home__header'>Home</h1>
+    <div className='home__main'>
+      <div className='home__header'>
+        <h1>Home</h1>
+      </div>
       <div>
-        <div>
+        <div className='home__body'>
           <h2 className="text">
             Enter the Client Code to begin tracking
           </h2>
@@ -69,16 +71,23 @@ const Home = () => {
           </div>
         </div>
         <div className='track__button'>
-          <button className='track__buttonel' onClick={handleButtonClick}>Begin Tracking</button>
+          <button onClick={handleButtonClick}>Begin Tracking</button>
         </div>
 
-        {currentUser ? (
-          <ul className='user__section'>
-              <p>{currentUser.email}</p>
-          </ul>
-        ) : (
-          <p>No user currently logged in.</p>
-        )}
+        <div>
+          {currentUser ? (
+
+            <div className='user__info'>
+              <div className='user__icon'>
+              </div>
+              <div>
+                <p>{currentUser.email}</p>
+              </div>
+            </div>
+          ) : (
+            <p>No user currently logged in.</p>
+          )}
+        </div>
       </div>
 
     </div>

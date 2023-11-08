@@ -12,7 +12,7 @@ function App() {
     <div className="main" >
       <div className='app__header'>
         <div className="header__logo"
-          style={{ backgroundImage: "url(/img/five-bulls-favicon-black.png)" }}>
+          style={{ backgroundImage: "url(/img/five-bulls-favicon-black.png)", backgroundRepeat: 'no-repeat' }}>
         </div>
         <div className='header__text'>
           <h1>Five Bulls Tracker</h1>
