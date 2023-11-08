@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { auth } from '../Firebase';
 import { UserContext } from '../UserContext';
+import './AdminPanel.css'
 
 function AdminPanel() {
   const navigate = useNavigate();
@@ -34,14 +35,25 @@ function AdminPanel() {
     checkAdminStatus();
   }, []);
 
-  return (
-    <>
-      <div>AdminPanel</div>
+  const handleButtonClick = () => {
+    navigate('/createUser');
+  };
 
-      <div>
-        <NavLink to="/createUser"><button>Sign up</button></NavLink>
+
+  return (
+    <div className='adminpanel__main'>
+      <div className='adminpanel__header'>
+        <h1>AdminPanel</h1>
       </div>
-    </>
+
+      <div className='text'>
+        <p>Add new user</p>
+      </div>
+
+      <div className='nav__button '>
+        <button onClick={handleButtonClick}>Create User</button>
+      </div>
+    </div>
   );
 }
 

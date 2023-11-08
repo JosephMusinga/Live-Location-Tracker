@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../Firebase';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { UserContext } from '../UserContext';
 import './Home.css'
 
@@ -87,7 +87,12 @@ const Home = () => {
           ) : (
             <p>No user currently logged in.</p>
           )}
+
         </div>
+        <NavLink to="/login">
+          logout
+        </NavLink>
+
       </div>
 
     </div>

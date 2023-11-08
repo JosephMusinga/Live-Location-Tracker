@@ -37,7 +37,7 @@ const Login = () => {
         <>
             <div className='login__main'>
                 <div className='login__header'>
-                    Login
+                    <h1>Login</h1>
                 </div>
                 <form className='form'>
                     <div className='email__section'>
