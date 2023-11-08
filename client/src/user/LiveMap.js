@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Polyline, Popup } from 'react-leaflet';
 import { getCoordinatesFromDatabase } from '../Firebase';
-import "leaflet-routing-machine";
-import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 
 function LiveMap() {
   const [coordinates, setCoordinates] = useState([-17.84, 31.04]);
@@ -36,16 +34,16 @@ function LiveMap() {
     });
   }, []);
 
-   
+
 
   return (
     <div>
       <link
-          rel="stylesheet"
-          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-          crossOrigin=""
-        />
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossOrigin=""
+      />
 
       <div style={{ height: '90vh', width: '100%' }}>
         <MapContainer
@@ -58,10 +56,20 @@ function LiveMap() {
             url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
           />
 
-          <Marker position={coordinates} />
-          <Marker position={currentPosition} />
+          <Marker position={coordinates}>
+            <Popup>
+            <h1>Client</h1>
+            </Popup>
+          </Marker>
 
-          <Polyline positions={[coordinates, currentPosition]} /> 
+          <Marker position={currentPosition}>
+            <Popup>
+              <h1>Your location</h1>
+            </Popup>
+
+          </Marker>
+
+          <Polyline positions={[coordinates, currentPosition]} />
         </MapContainer>
 
       </div>

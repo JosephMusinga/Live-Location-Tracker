@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { useNavigate, NavLink } from 'react-router-dom';
-import { auth } from '../Firebase';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../UserContext';
 import './AdminPanel.css'
 
@@ -33,7 +32,7 @@ function AdminPanel() {
 
   useEffect(() => {
     checkAdminStatus();
-  }, []);
+  });
 
   const handleButtonClick = () => {
     navigate('/createUser');
