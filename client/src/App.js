@@ -10,12 +10,17 @@ import './App.css'
 function App() {
   return (
     <div className="main" >
-      <div>
-        <h1 className='app__header'>Live Location Tracker</h1>
+      <div className='app__header'>
+        <div className="header__logo"
+          style={{ backgroundImage: "url(/img/five-bulls-favicon-black.png)" }}>
+        </div>
+        <div className='header__text'>
+          <h1>Five Bulls Tracker</h1>
+        </div>
       </div>
 
-      
-      <div>
+
+      <div className='body'>
         <BrowserRouter>
           <Routes>
             <Route exact path='/' element={<Login />} />

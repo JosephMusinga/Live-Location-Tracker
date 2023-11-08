@@ -1,5 +1,11 @@
-.home__main{
-    border-style:dotted ;
+.home__header{
+    display: flex;
+    justify-content: center;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
 }
 
 .input__field{
@@ -12,4 +18,12 @@
     margin-top: 55px;
     display: flex;
     justify-content: center;
+}
+
+.track__buttonel{
+    color: red;
+}
+
+.user__section{
+    margin-top:90px;
 }

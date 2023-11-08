@@ -51,8 +51,8 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
-      <div className='home__main'>
+      <h1 className='home__header'>Home</h1>
+      <div>
         <div>
           <h2 className="text">
             Enter the Client Code to begin tracking
@@ -69,14 +69,12 @@ const Home = () => {
           </div>
         </div>
         <div className='track__button'>
-          <button onClick={handleButtonClick}>Track</button>
+          <button className='track__buttonel' onClick={handleButtonClick}>Begin Tracking</button>
         </div>
 
         {currentUser ? (
-          <ul>
-            <li>
-              <span>{currentUser.email}</span>
-            </li>
+          <ul className='user__section'>
+              <p>{currentUser.email}</p>
           </ul>
         ) : (
           <p>No user currently logged in.</p>

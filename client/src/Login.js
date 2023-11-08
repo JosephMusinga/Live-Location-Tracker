@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './Firebase';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from './UserContext';
+import './Login.css'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -34,9 +35,12 @@ const Login = () => {
 
     return (
         <>
-            <div>
-                <form>
-                    <div className='flex flex-col m-10'>
+            <div className='login__main'>
+                <div className='login__header'>
+                    Login
+                </div>
+                <form className='form'>
+                    <div className='email__section'>
                         <label className='text-green-700 text-2xl' htmlFor="email-address">
                             Email address
                         </label>
@@ -45,12 +49,12 @@ const Login = () => {
                             name="email"
                             type="email"
                             required
-                            placeholder="Email address"
+                            placeholder="Enter email address"
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
 
-                    <div className='flex flex-col m-10'>
+                    <div className='password__section'>
                         <label className='text-green-700 text-2xl' htmlFor="password">
                             Password
                         </label>
@@ -59,13 +63,13 @@ const Login = () => {
                             name="password"
                             type="password"
                             required
-                            placeholder="Password"
+                            placeholder="Enter password"
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
 
-                    <div className='text-red-700'>
-                        <button className='flex flex-col m-10  border-black' onClick={onLogin}>
+                    <div className='button__section'>
+                        <button className='button' onClick={onLogin}>
                             Login
                         </button>
                     </div>

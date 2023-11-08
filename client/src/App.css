@@ -1,5 +1,31 @@
-.main{
+.main {
     display: flex;
     flex-direction: column;
+    font-family: 'Trebuchet MS';
+
+}
+
+.app__header {
+    margin: 0px;
+    background-color: rgb(220, 145, 87);
+    color: black;
+    display: flex;
+    justify-content: center;
+    height: 111px;
+}
+
+.header__logo {
+    width: 21%;
+}
+
+.header__text {
+    display: flex;
     align-items: center;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.body {
+    
 }
