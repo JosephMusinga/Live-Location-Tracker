@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { database } from "../Firebase";
-import {ref, push} from "firebase/database";
+import { ref, push } from "firebase/database";
 
 const TouristForm = () => {
   const [touristData, setTouristData] = useState({
@@ -38,56 +38,74 @@ const TouristForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Tourist Code:
-        <input
-          type="text"
-          name="TouristCode"
-          value={touristData.TouristCode}
-          onChange={handleChange}
-        />
-      </label>
+    <form className="form" onSubmit={handleSubmit}>
+      <div className="form__element">
+        <label>
+          Tourist Code:
+          <input
+            type="text"
+            name="TouristCode"
+            value={touristData.TouristCode}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
       <br />
-      <label>
-        Name:
-        <input
-          type="text"
-          name="Name"
-          value={touristData.Name}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="form__element">
+        <label>
+          Name:
+          <input
+            type="text"
+            name="Name"
+            value={touristData.Name}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
       <br />
-      <label>
-        Sex:
-        <input
-          type="text"
-          name="Sex"
-          value={touristData.Sex}
-          onChange={handleChange}
-        />
-      </label>
+
+      <div className="form__element">
+        <label>
+          Sex:
+          <input
+            type="text"
+            name="Sex"
+            value={touristData.Sex}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
       <br />
-      <label>
-        Country:
-        <input
-          type="text"
-          name="Country"
-          value={touristData.Country}
-          onChange={handleChange}
-        />
-      </label>
+
+      <div className="form__element">
+        <label>
+          Country:
+          <input
+            type="text"
+            name="Country"
+            value={touristData.Country}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
       <br />
-      <label>
-        Passport Number:
-        <input
-          type="text"
-          name="PassportNumber"
-          value={touristData.PassportNumber}
-          onChange={handleChange}
-        />
-      </label>
+
+      <div className="form__element">
+        <label>
+          Passport Number:
+          <input
+            type="text"
+            name="PassportNumber"
+            value={touristData.PassportNumber}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
       <br />
       <button type="submit">Submit</button>
     </form>

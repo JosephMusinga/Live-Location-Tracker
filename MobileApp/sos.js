@@ -15,7 +15,7 @@ var searchParams = new URLSearchParams(window.location.search);
 var name = searchParams.get('inputValue').toString();
 console.log(typeof (name))
 
-const coordinatesInDB = ref(database, name)
+const coordinatesInDB = ref(database, `live_coordinates/${name}`)
 const alertsInDB = ref(database, 'alerts')
 
 

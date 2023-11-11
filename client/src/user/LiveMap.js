@@ -10,14 +10,14 @@ function LiveMap() {
     const params = new URLSearchParams(window.location.search);
     const databaseRef = params.get('databaseRef');
 
-    getCoordinatesFromDatabase(databaseRef)
+    getCoordinatesFromDatabase(`live_coordinates/${databaseRef}`)
       .then((coordinatesArray) => {
         setCoordinates(coordinatesArray);
       })
       .catch((error) => {
         console.error('Error retrieving coordinates:', error);
       });
-  }, []);
+  });
 
   function getPosition(callback) {
     navigator.geolocation.getCurrentPosition((position) => {
