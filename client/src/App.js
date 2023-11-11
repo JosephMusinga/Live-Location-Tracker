@@ -10,7 +10,7 @@ import { getAlertFromDatabase } from './Firebase';
 
 function App() {
 
-  // getAlertFromDatabase()
+  getAlertFromDatabase()
 
   return (
     <div className="main" >

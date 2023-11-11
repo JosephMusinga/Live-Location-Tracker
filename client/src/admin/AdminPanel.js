@@ -54,11 +54,7 @@ function AdminPanel() {
       </div>
 
       <div className='nav__button '>
-        <button onClick={handleButtonClick}>Create  Tourist</button>
-      </div>
-
-      <div className='nav__button '>
-        <button onClick={handleButtonClick}>Create Tracker</button>
+        <button onClick={handleButtonClick}>Create  User</button>
       </div>
 
       <div className='nav__button '>
