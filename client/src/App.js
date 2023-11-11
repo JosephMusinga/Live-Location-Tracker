@@ -4,7 +4,6 @@ import CreateUser from './admin/CreateUser';
 import Home from './user/Home';
 import AdminPanel from './admin/AdminPanel';
 import LiveMap from './user/LiveMap';
-import UserList from './admin/UsersList';
 import TouristsRecords from './admin/TouristsRecords';
 import './App.css'
 import { getAlertFromDatabase } from './Firebase';
@@ -35,7 +34,6 @@ function App() {
             <Route exact path='/adminPanel' element={<AdminPanel />} />
             <Route exact path='/liveMap' element={<LiveMap />} />
             <Route exact path='/touristsRecords' element={<TouristsRecords />} />
-            <Route exact path='/userList' element={<UserList />} />
 
           </Routes>
         </BrowserRouter>
