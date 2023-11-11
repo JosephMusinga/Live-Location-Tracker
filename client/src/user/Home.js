@@ -57,15 +57,15 @@ const Home = () => {
       <div>
         <div className='home__body'>
           <h2 className="text">
-            Enter the Client Code to begin tracking
+            Enter the Tourist Code to begin tracking
           </h2>
 
           <div className='input__field'>
             <input
-              id="clientCode"
-              name="clientCode"
+              id="touristCode"
+              name="touristCode"
               required
-              placeholder="clientCode"
+              placeholder="Tourist Code"
               onChange={(e) => setRef(e.target.value)}
             />
           </div>

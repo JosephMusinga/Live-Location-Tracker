@@ -38,6 +38,10 @@ function AdminPanel() {
     navigate('/createUser');
   };
 
+  const handleTouristButtonClick = () => {
+    navigate('/touristsRecords');
+  };
+
 
   return (
     <div className='adminpanel__main'>
@@ -56,6 +60,11 @@ function AdminPanel() {
       <div className='nav__button '>
         <button onClick={handleButtonClick}>Create Tracker</button>
       </div>
+
+      <div className='nav__button '>
+        <button onClick={handleTouristButtonClick}>Create Tourist Record</button>
+      </div>
+
     </div>
   );
 }
