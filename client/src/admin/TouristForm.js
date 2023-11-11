@@ -3,6 +3,8 @@ import { database } from "../Firebase";
 import { ref, push } from "firebase/database";
 
 const TouristForm = () => {
+
+
   const [touristData, setTouristData] = useState({
     TouristCode: "",
     Name: "",
@@ -14,10 +16,19 @@ const TouristForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Push the touristData object to the "tourist records" reference in the database
+    const liveCoordinatesinDB = ref(database, `live_coordinates/${touristData.TouristCode}`)
+
+
+    //Push the defaultCoordinates object to the "live_coordinates" database reference
+    push(ref(liveCoordinatesinDB), {
+      "latitude": 11,
+      "longitude": 11,
+    });
+
+    // Push the touristData object to the "tourist records" database reference
     push(ref(database, "tourist records"), touristData)
       .then(() => {
-        console.log("Tourist record created successfully");
+        alert("Tourist record created successfully");
         // Reset the form after successful submission
         setTouristData({
           TouristCode: "",
