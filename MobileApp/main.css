@@ -1,0 +1,71 @@
+.app {
+    font-family: 'Franklin Gothic Medium';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    user-select: none;
+}
+
+.app__header {
+    margin-top: 55px;
+    color: rgb(250, 72, 72);
+}
+
+.text {
+    width: 300px;
+    margin: 20px;
+    font-size: larger;
+    text-align: center;
+}
+
+.btn__container {
+    display: flex;
+    justify-content: center;
+    margin: 22px;
+    width: 155px;
+    height: 35px;
+}
+
+.app__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input__field {
+    width: 50%;
+    font-size: larger;
+    text-align: center;
+    border-color: rgb(227, 109, 109);
+}
+
+.submit__button {
+    margin-top: 15px;
+    width: 155px;
+    height: 31px;
+    font-size: larger;
+    background-color: rgb(254, 236, 236);
+    color: black;
+    border-radius: 11px;
+}
+
+.submit__button:hover {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.alert__btn {
+    width: 155px;
+    height: 35px;
+    font-size: larger;
+    background-color: rgb(250, 72, 72);
+    color: white;
+    border-radius: 11px;
+}
+
+.alert__btn:hover {
+    background-color: rgb(241, 150, 150);
+    cursor: pointer;
+}
