@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export default app;
 
-const database = getDatabase(app)
+export const database = getDatabase(app)
 
 export const getCoordinatesFromDatabase = (databaseRef) => {
   const coordinatesRef = ref(database, databaseRef)
