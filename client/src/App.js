@@ -6,8 +6,12 @@ import AdminPanel from './admin/AdminPanel';
 import LiveMap from './user/LiveMap';
 import UserList from './admin/UsersList';
 import './App.css'
+import { getAlertFromDatabase } from './Firebase';
 
 function App() {
+
+  getAlertFromDatabase()
+
   return (
     <div className="main" >
       <div className='app__header'>

@@ -61,3 +61,5 @@ export const getAlertFromDatabase = () => {
       }, 1000);
     });
   };
+
+  
