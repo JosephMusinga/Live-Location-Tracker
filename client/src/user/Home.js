@@ -75,6 +75,8 @@ const Home = () => {
           <button onClick={handleButtonClick}>Begin Tracking</button>
         </div>
 
+        <Alerts/>
+
         <div>
           {currentUser ? (
 
@@ -90,7 +92,7 @@ const Home = () => {
           )}
 
         </div>
-        <Alerts/>
+        
         <NavLink to="/login">
           logout
         </NavLink>
