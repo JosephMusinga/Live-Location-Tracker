@@ -32,7 +32,7 @@ function LiveMap() {
       setCurrentPosition(currentPosition);
       console.log(currentPosition)
     });
-  }, [22]);
+  }, [122]);
 
 
 
