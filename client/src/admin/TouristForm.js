@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { database } from "../Firebase";
-import { ref, push } from "firebase/database";
+import { ref, push, update } from "firebase/database";
 
 const TouristForm = () => {
 
@@ -16,15 +16,15 @@ const TouristForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const liveCoordinatesinDB = ref(database, `live_coordinates/${touristData.TouristCode}`)
+    const defaultCoordinates = { latitude: 11, longitude: 11 };
+    
+    const liveCoordinatesRef = ref(database, "live_coordinates");
 
-
-    //Push the defaultCoordinates object to the "live_coordinates" database reference
-    push(ref(liveCoordinatesinDB), {
-      "latitude": 11,
-      "longitude": 11,
-    });
-
+    // Set the object directly under the "live_coordinates" reference
+    update(liveCoordinatesRef, {
+      [touristData.TouristCode]: defaultCoordinates
+    })
+    
     // Push the touristData object to the "tourist records" database reference
     push(ref(database, "tourist records"), touristData)
       .then(() => {

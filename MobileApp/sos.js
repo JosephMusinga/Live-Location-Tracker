@@ -13,7 +13,7 @@ const database = getDatabase(app)
 //get reference value from input
 var searchParams = new URLSearchParams(window.location.search);
 var name = searchParams.get('inputValue').toString();
-console.log(typeof (name))
+console.log(name)
 
 const coordinatesInDB = ref(database, `live_coordinates/${name}`)
 const alertsInDB = ref(database, 'alerts')
@@ -68,7 +68,7 @@ function getCoordinates() {
 }
 
 function coordinatesUpdateInterval(myFunction) {
-    setInterval(myFunction, 8 * 1000);
+    setInterval(myFunction, 30 * 1000);
 }
 
 coordinatesUpdateInterval(getCoordinates);
@@ -82,7 +82,7 @@ function getDate(){
   const minute = today.getMinutes()
   const seconds = today.getSeconds()
 
-  const fullDateAndTime = `${day}-${month}-${year} time :${hour}:${minute}:${seconds}`
+  const fullDateAndTime = `${day}-${month}-${year} time ${hour}:${minute}:${seconds}`
 
   return fullDateAndTime
 }
