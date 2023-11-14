@@ -4,6 +4,7 @@ import { auth } from '../Firebase';
 import { useNavigate, NavLink } from 'react-router-dom'
 import { UserContext } from '../UserContext';
 import './Home.css'
+import Alerts from './Alerts';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ const Home = () => {
           )}
 
         </div>
+        <Alerts/>
         <NavLink to="/login">
           logout
         </NavLink>
