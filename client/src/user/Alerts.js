@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ref, onValue, off } from 'firebase/database';
+import { ref, onValue} from 'firebase/database';
 import { database } from '../Firebase'
 
 function Alerts() {

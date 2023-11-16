@@ -5,10 +5,11 @@ import Home from './user/Home';
 import AdminPanel from './admin/AdminPanel';
 import LiveMap from './user/LiveMap';
 import TouristsRecords from './admin/TouristsRecords';
+import TouristList from './admin/TouristsList';
 import './App.css'
 import { getAlertFromDatabase } from './Firebase';
 
-function App() {
+function App() { 
 
   getAlertFromDatabase()
 
@@ -21,6 +22,7 @@ function App() {
         <div className='header__text'>
           <h1>Five Bulls Tracker</h1>
         </div>
+        
       </div>
 
 
@@ -34,6 +36,7 @@ function App() {
             <Route exact path='/adminPanel' element={<AdminPanel />} />
             <Route exact path='/liveMap' element={<LiveMap />} />
             <Route exact path='/touristsRecords' element={<TouristsRecords />} />
+            <Route exact path='/touristList' element={<TouristList />} />
 
           </Routes>
         </BrowserRouter>

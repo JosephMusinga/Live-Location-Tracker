@@ -7,15 +7,22 @@ import TouristList from './TouristsList';
 function TouristsRecords() {
   const navigate = useNavigate();
 
+  const handleButtonClick = () => {
+   
+    navigate(`/touristList`);
+  };
+
+
 
   return (
     <>
-      <div>TouristsRecords</div>
       <div>
         <h1>Tourist Form</h1>
         <TouristForm />
-        <TouristList/>
       </div>
+      <br />
+      <button onClick={handleButtonClick}>Tourist List</button>
+
     </>
 
   )
