@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ref, onValue, off } from 'firebase/database';
 import { database } from '../Firebase'
+import { NavLink } from 'react-router-dom';
 
 function TouristList() {
   const [touristList, setTouristList] = useState([]);
@@ -55,6 +56,9 @@ function TouristList() {
       ) : (
         <p>No tourist records found.</p>
       )}
+      <NavLink to="/touristsRecords">
+        back
+      </NavLink>
     </>
   );
 }

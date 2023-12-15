@@ -1,8 +1,5 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import TouristForm from './TouristForm';
-import TouristList from './TouristsList';
-
 
 function TouristsRecords() {
   const navigate = useNavigate();
@@ -22,7 +19,14 @@ function TouristsRecords() {
       </div>
       <br />
       <button onClick={handleButtonClick}>Tourist List</button>
-
+      <br />
+      <NavLink to="/adminPanel">
+        back
+      </NavLink>
+      <br />
+      <NavLink to="/login">
+        logout
+      </NavLink>
     </>
 
   )

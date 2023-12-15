@@ -38,6 +38,7 @@ function App() {
             <Route exact path='/touristsRecords' element={<TouristsRecords />} />
             <Route exact path='/touristList' element={<TouristList />} />
 
+
           </Routes>
         </BrowserRouter>
       </div>

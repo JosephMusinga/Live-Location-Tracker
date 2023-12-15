@@ -45,9 +45,16 @@ const Home = () => {
   });
 
   const handleButtonClick = () => {
-    let value = ref;
-    // Navigate to the second page with the user name as a prop.
-    navigate(`/liveMap?databaseRef=${value}`);
+    const value = ref;
+  
+    if (value === "") {
+      alert("Tourist code cannot be empty");
+    } else if (!/^\d+$/.test(value)) {
+      alert("Tourist code must be a number");
+    } else {
+      // Navigate to the second page with the user name as a prop.
+      navigate(`/liveMap?databaseRef=${value}`);
+    }
   };
 
   return (
@@ -65,9 +72,10 @@ const Home = () => {
             <input
               id="touristCode"
               name="touristCode"
-              required
               placeholder="Tourist Code"
               onChange={(e) => setRef(e.target.value)}
+              required
+
             />
           </div>
         </div>

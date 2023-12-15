@@ -34,6 +34,7 @@ const Signup = () => {
     return (
         <div className='createuser__main'>
             <div>
+            
                 <h1>
                     Create User
                 </h1>
@@ -75,10 +76,13 @@ const Signup = () => {
                     </button>
                 </div>
 
-                <NavLink to="/login">
-                    logout
-                </NavLink>
-
+                    <NavLink to="/adminPanel">
+                        back
+                    </NavLink>
+                    <br />
+                    <NavLink to="/login">
+                        logout
+                    </NavLink>
             </form>
 
         </div>
